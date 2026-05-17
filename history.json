@@ -1,0 +1,16 @@
+[
+  {
+    "timestamp": "2026-05-17 13:50 UTC",
+    "bias_ia": "HAUSSIER",
+    "confidence": "Moyen",
+    "bias_final": "neutre",
+    "score": 0,
+    "trader_phrase": "Acheter XAUUSD en cas de cassure de la résistance à 1950",
+    "summary": "Les dernières nouvelles macroéconomiques montrent une augmentation des prix de l'or en Inde en raison de la chute de la roupie et de la hausse des prix du carburant. Les prévisions de récession mondiale et les avertissements de Ray Dalio sur la perte de crédibilité des États-Unis pourraient également soutenir les prix de l'or. Les résultats du trimestre 1 de i-80 Gold sont également positifs pour le secteur. Les tensions géopolitiques et les prévisions économiques incertaines pourraient continuer à soutenir les prix de l'or.",
+    "events": [
+      "Réunion de la Fed",
+      "Publication des données économiques chinoises",
+      "Évolution de la situation géopolitique entre les États-Unis et la Chine"
+    ]
+  }
+]

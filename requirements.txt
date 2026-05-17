@@ -1,0 +1,12 @@
+requests==2.32.3
+python-dotenv==1.0.1
+pandas==2.2.2
+streamlit==1.36.0
+schedule==1.2.2
+pydantic==2.7.4
+rich==13.7.1
+anthropic==0.34.2 # ou openai==1.40.0 selon votre choix
+requests
+python-dotenv
+pandas>=2.3.0
+streamlit
