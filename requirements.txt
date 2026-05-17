@@ -12,3 +12,4 @@ streamlit
 pandas==2.2.2
 plotly
 numpy
+grokapi
