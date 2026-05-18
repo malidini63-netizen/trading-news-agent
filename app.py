@@ -41,12 +41,22 @@ st.markdown("""
         margin-top: 5px;
     }
     .news-card {
-        background: #1a1a2e;
-        border-left: 3px solid #f0c040;
-        padding: 10px 15px;
-        border-radius: 6px;
-        margin: 8px 0;
-    }
+    background: rgba(255, 255, 255, 0.04);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    border: 1px solid rgba(240, 192, 64, 0.15);
+    border-left: 3px solid #f0c040;
+    padding: 10px 15px;
+    border-radius: 10px;
+    margin: 8px 0;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3),
+                inset 0 1px 0 rgba(255, 255, 255, 0.05);
+    transition: box-shadow 0.2s ease;
+}
+.news-card:hover {
+    box-shadow: 0 6px 28px rgba(240, 192, 64, 0.12),
+                inset 0 1px 0 rgba(255, 255, 255, 0.08);
+}
     .event-high { border-left: 3px solid #ff4b4b; }
     .event-med  { border-left: 3px solid #ffa500; }
     .event-low  { border-left: 3px solid #888; }
@@ -57,7 +67,7 @@ assert_config()
 
 # ── SIDEBAR ──────────────────────────────────────────────
 with st.sidebar:
-    st.image("https://upload.wikimedia.org/wikipedia/commons/thumb/d/d3/Gold_bullion_bars.jpg/320px-Gold_bullion_bars.jpg", use_container_width=True)
+    st.image("https://upload.wikimedia.org/wikipedia/commons/thumb/d/d3/Gold_bullion_bars.jpg/320px-Gold_bullion_bars.jpg", width="stretch")
     st.title("⚙️ Paramètres")
     st.divider()
 
@@ -148,8 +158,7 @@ if st.session_state.result and st.session_state.bias_result:
         paper_bgcolor="rgba(0,0,0,0)",
         font={"color": "white"}
     )
-    st.plotly_chart(fig_gauge, use_container_width=True)
-
+    st.plotly_chart(fig_gauge, width="stretch")
     # ── MÉTRIQUES ─────────────────────────────────────────
     c1, c2, c3, c4 = st.columns(4)
     with c1:
@@ -270,7 +279,7 @@ if len(history) >= 2:
         yaxis={"gridcolor": "#333", "range": [-5, 5]},
         height=300
     )
-    st.plotly_chart(fig_hist, use_container_width=True)
+    st.plotly_chart(fig_hist, width="stretch")
 
 elif history:
     st.info("Lance au moins 2 analyses pour voir le graphique historique.")
