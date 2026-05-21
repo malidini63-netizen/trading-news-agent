@@ -41,22 +41,18 @@ st.markdown("""
         margin-top: 5px;
     }
     .news-card {
-    background: rgba(255, 255, 255, 0.04);
-    backdrop-filter: blur(12px);
-    -webkit-backdrop-filter: blur(12px);
-    border: 1px solid rgba(240, 192, 64, 0.15);
-    border-left: 3px solid #f0c040;
-    padding: 10px 15px;
-    border-radius: 10px;
-    margin: 8px 0;
-    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3),
-                inset 0 1px 0 rgba(255, 255, 255, 0.05);
-    transition: box-shadow 0.2s ease;
-}
-.news-card:hover {
-    box-shadow: 0 6px 28px rgba(240, 192, 64, 0.12),
-                inset 0 1px 0 rgba(255, 255, 255, 0.08);
-}
+        background: linear-gradient(135deg, rgba(240, 192, 64, 0.08), rgba(255,255,255,0.03));
+        border: 1px solid rgba(240, 192, 64, 0.3);
+        border-left: 3px solid #f0c040;
+        padding: 10px 15px;
+        border-radius: 10px;
+        margin: 8px 0;
+        box-shadow: 0 4px 20px rgba(0, 0, 0, 0.4);
+    }
+    .news-card:hover {
+        background: linear-gradient(135deg, rgba(240, 192, 64, 0.12), rgba(255,255,255,0.05));
+        box-shadow: 0 6px 28px rgba(240, 192, 64, 0.2);
+    }
     .event-high { border-left: 3px solid #ff4b4b; }
     .event-med  { border-left: 3px solid #ffa500; }
     .event-low  { border-left: 3px solid #888; }
@@ -188,9 +184,79 @@ if st.session_state.result and st.session_state.bias_result:
     col_left, col_right = st.columns([1, 1])
 
     with col_left:
-        # Résumé
-        st.subheader("🧠 Résumé IA")
-        st.info(result.get("summary", ""))
+        # ── ANALYSE STRUCTURÉE ────────────────────────────
+        st.subheader("🧠 Analyse macro IA")
+
+        # Biais CT + Swing
+        bct = result.get("biais_ct", "N/A").upper()
+        bsw = result.get("biais_swing", "N/A").upper()
+        col_ct, col_sw = st.columns(2)
+        with col_ct:
+            st.markdown(f"""<div class="metric-card">
+                <div class="metric-value" style="font-size:1.2em">{bct}</div>
+                <div class="metric-label">🌍 Biais CT (intraday)</div>
+                <div style="color:#ccc;font-size:0.8em;margin-top:6px">{result.get("biais_ct_justification","")}</div>
+            </div>""", unsafe_allow_html=True)
+        with col_sw:
+            st.markdown(f"""<div class="metric-card">
+                <div class="metric-value" style="font-size:1.2em">{bsw}</div>
+                <div class="metric-label">📈 Biais Swing (multi-jours)</div>
+                <div style="color:#ccc;font-size:0.8em;margin-top:6px">{result.get("biais_swing_justification","")}</div>
+            </div>""", unsafe_allow_html=True)
+
+        st.markdown("")
+
+        # Session & Kill Zone
+        session = result.get("session", "N/A")
+        kz = result.get("kill_zone", "Aucune")
+        st.markdown(f"🔎 **Session active :** {session} &nbsp;|&nbsp; **Kill Zone :** {kz}")
+
+        st.divider()
+
+        # News scorées
+        news_an = result.get("news_analysees", [])
+        if news_an:
+            st.subheader("📰 News scorées")
+            for n in news_an:
+                direction = n.get("direction", "Neutre")
+                intensite = n.get("intensite", "")
+                color = "#26a269" if "XAU+" in direction or "USD-" in direction else \
+                        "#e01b24" if "XAU-" in direction or "USD+" in direction else "#888"
+                st.markdown(f"""<div class="news-card" style="border-left-color:{color}">
+                    <strong>{n.get('titre','')}</strong><br>
+                    <small style="color:{color}">▶ {direction}</small>
+                    <small style="color:#aaa"> — {intensite}</small>
+                </div>""", unsafe_allow_html=True)
+        else:
+            # fallback résumé texte
+            st.subheader("🧠 Résumé IA")
+            st.info(result.get("summary", ""))
+
+        st.divider()
+
+        # Catalyseurs
+        if result.get("catalyseurs"):
+            st.subheader("⚡ Catalyseurs clés")
+            for c in result["catalyseurs"]:
+                st.markdown(f"- {c}")
+
+        # Alertes
+        alertes = result.get("alertes", [])
+        if alertes:
+            st.subheader("⚠️ Alertes")
+            for a in alertes:
+                st.warning(a)
+
+        # Alerte imminente (bias_engine)
+        if bias_result.get("imminent"):
+            st.error("🚨 ÉVÉNEMENT IMMINENT — Prudence !")
+            for e in bias_result["imminent"]:
+                st.markdown(f"- **{e['name']}** dans moins de 2h")
+
+        # Remarque analyst
+        if result.get("remarque_analyst"):
+            st.subheader("💬 Remarque Analyst")
+            st.info(result.get("remarque_analyst"))
 
         # Phrase trader
         st.subheader("💬 Phrase trader")
@@ -201,12 +267,6 @@ if st.session_state.result and st.session_state.bias_result:
             st.subheader("🔔 Événements à surveiller")
             for e in result["events_to_watch"]:
                 st.markdown(f"- {e}")
-
-        # Alerte imminente
-        if bias_result.get("imminent"):
-            st.error("🚨 ÉVÉNEMENT IMMINENT — Prudence !")
-            for e in bias_result["imminent"]:
-                st.markdown(f"- **{e['name']}** dans moins de 2h")
 
         st.divider()
 

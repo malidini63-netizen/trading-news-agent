@@ -12,5 +12,104 @@
       "Publication des données économiques chinoises",
       "Évolution de la situation géopolitique entre les États-Unis et la Chine"
     ]
+  },
+  {
+    "timestamp": "2026-05-18 21:28 UTC",
+    "bias_ia": "HAUSSIER",
+    "confidence": "Moyen",
+    "bias_final": "neutre",
+    "score": 0,
+    "trader_phrase": "Acheter XAUUSD en attendant une hausse des prix due à la demande croissante de l'or",
+    "summary": "Les dernières news macro montrent une certaine instabilité économique, avec des inquiétudes sur la dette américaine et des changements politiques en Californie. Cependant, le marché de l'or semble stable, avec des entreprises minières comme TRX Gold Corporation et AngloGold Ashanti plc étant considérées comme des investissements solides. Les banques centrales continuent d'acheter de l'or, ce qui pourrait soutenir les prix. Les prêts sur or sont également de plus en plus populaires, notamment en Inde.",
+    "events": [
+      "Les décisions de la Fed sur les taux d'intérêt",
+      "Les mouvements des banques centrales sur le marché de l'or",
+      "Les évolutions politiques en Californie et en Inde"
+    ]
+  },
+  {
+    "timestamp": "2026-05-18 21:32 UTC",
+    "bias_ia": "HAUSSIER",
+    "confidence": "Moyen",
+    "bias_final": "neutre",
+    "score": 0,
+    "trader_phrase": "Acheter XAUUSD à court terme en attendant une potentialité de hausse",
+    "summary": "Les dernières nouvelles macroéconomiques montrent une tendance haussière pour l'or, avec des investisseurs étrangers qui pourraient vendre leurs obligations du Trésor américain et des banques centrales qui achètent de l'or. Les entreprises minières d'or sont également dans l'actualité, avec des recommandations d'achat pour certaines d'entre elles. Les événements politiques et économiques en Californie et en Inde pourraient également avoir un impact sur le marché de l'or.",
+    "events": [
+      "Les décisions de la Fed américaine",
+      "Les mouvements des investisseurs étrangers sur le marché des obligations du Trésor américain",
+      "Les évolutions politiques et économiques en Californie et en Inde"
+    ]
+  },
+  {
+    "timestamp": "2026-05-18 21:35 UTC",
+    "bias_ia": "HAUSSIER",
+    "confidence": "Moyen",
+    "bias_final": "neutre",
+    "score": 0,
+    "trader_phrase": "Acheter XAUUSD en attendant une nouvelle hausse",
+    "summary": "Les dernières nouvelles macroéconomiques montrent une tendance haussière pour l'or, avec des investisseurs étrangers qui pourraient vendre leurs obligations du Trésor américain et des banques centrales qui achètent de l'or. Les entreprises minières d'or sont également dans l'actualité, avec des recommandations d'achat pour certaines d'entre elles. Les politiques gouvernementales, notamment en Inde, pourraient également avoir un impact sur le marché de l'or.",
+    "events": [
+      "Les décisions de la Fed",
+      "Les mouvements des investisseurs étrangers",
+      "Les politiques gouvernementales en Inde"
+    ]
+  },
+  {
+    "timestamp": "2026-05-18 21:35 UTC",
+    "bias_ia": "HAUSSIER",
+    "confidence": "Moyen",
+    "bias_final": "neutre",
+    "score": 0,
+    "trader_phrase": "Acheter XAUUSD en attendant une hausse des prix de l'or",
+    "summary": "Les dernières nouvelles macroéconomiques montrent que les banques centrales achètent de l'or, ce qui pourrait soutenir les prix de l'or. Les investisseurs japonais vendent leurs obligations américaines, ce qui pourrait affaiblir le dollar et renforcer l'or. Les petites bijouteries en Inde sont touchées par les politiques gouvernementales, ce qui pourrait affecter la demande d'or. Les sociétés minières d'or sont considérées comme des investissements intéressants.",
+    "events": [
+      "Les décisions de politique monétaire des banques centrales",
+      "Les mouvements des investisseurs japonais",
+      "Les politiques gouvernementales en Inde"
+    ]
+  },
+  {
+    "timestamp": "2026-05-18 21:40 UTC",
+    "bias_ia": "HAUSSIER",
+    "confidence": "Moyen",
+    "bias_final": "neutre",
+    "score": 0,
+    "trader_phrase": "Acheter l'or en cas de baisse du dollar américain ou d'augmentation de la demande de l'or",
+    "summary": "Les dernières news macro ne fournissent pas d'informations directes sur l'évolution du cours de l'or (XAUUSD), mais certaines tendances et événements pourraient avoir un impact indirect. Les articles sur les mines d'or et les banques centrales achetant de l'or pourraient soutenir le cours de l'or. Les inquiétudes sur la dette américaine et les politiques économiques pourraient également influencer les marchés. Les investisseurs sont invités à surveiller les événements économiques et les tendances du marché.",
+    "events": [
+      "Évolution de la dette américaine",
+      "Décisions des banques centrales sur les achats d'or",
+      "Tendances du marché des changes"
+    ]
+  },
+  {
+    "timestamp": "2026-05-21 21:14 UTC",
+    "bias_ia": "neutre",
+    "confidence": "moyen",
+    "bias_final": "neutre",
+    "score": 0,
+    "trader_phrase": "Aujourd'hui, je favorise plutôt une attitude de prudence en raison du risque événementiel élevé.",
+    "summary": "Les news sont mitigées, avec des éléments à la fois positifs et négatifs pour l'or et le dollar. Le risque événementiel est élevé en raison des projections de taux d'intérêt de la Fed.",
+    "events": [
+      "FOMC",
+      "CPI",
+      "NFP"
+    ]
+  },
+  {
+    "timestamp": "2026-05-21 21:26 UTC",
+    "bias_ia": "prudence",
+    "confidence": "moyen",
+    "bias_final": "neutre",
+    "score": 0,
+    "trader_phrase": "Aujourd'hui, je favorise plutôt une attitude prudente en attendant les prochains événements économiques.",
+    "summary": "Les news sont mitigées, avec des éléments positifs pour l'or et des éléments négatifs liés aux hausses de taux d'intérêt. La probabilité de hausses de taux à 54% pour la fin de l'année pourrait peser sur l'or à moyen terme.",
+    "events": [
+      "FOMC",
+      "CPI",
+      "NFP",
+      "PPI"
+    ]
   }
 ]

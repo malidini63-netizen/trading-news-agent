@@ -62,7 +62,7 @@ def get_economic_calendar(days_ahead=7):
         return []
 
 
-def get_imminent_events(events, hours=2):
+def get_imminent_events(events, hours=1):
     """Retourne les événements dans les X prochaines heures"""
     now = datetime.now(timezone.utc)
     return [
